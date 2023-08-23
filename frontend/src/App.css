@@ -1,0 +1,84 @@
+body {
+  font-family: 'Josefin Sans';
+  background-color: #18191a;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+.react-horizontal-scrolling-menu--wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.exercise-card {
+  max-width: 300px;
+  background: #242526;
+  border-top: 4px solid #1976d2;
+  border-radius: 0 0 30px 30px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding-bottom: 0px;
+}
+
+.exercise-card img {
+  width: 300px;
+  height: 300px;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.bodyPart-card {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.exercise-card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.search-btn:hover {
+  color: #1976d2 !important;
+  border: 1px solid #1976d2 !important;
+  width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 500px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    position: static !important;
+  }
+
+  .exercise-card {
+    width: 320px;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  .exercise-card {
+    width: 280px;
+  }
+}

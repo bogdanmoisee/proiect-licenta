@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
-import { Outlet } from 'react-router-dom';
+import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { refreshAccessToken, selectAccessToken } from "./sessionSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import Loader from "../../utils/Loader";
 
 function PersistLogin() {
-  const loading = false;
-  const accessToken = false;
-  const refreshToken = null;
+  const loading = useAppSelector((state) => state.session.loading);
+  const accessToken = useAppSelector(selectAccessToken);
+  const refreshToken = useAppSelector((state) => state.session.refreshToken);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     function verifyRefreshToken() {
       try {
-        console.log("Refresh");
+        dispatch(refreshAccessToken(refreshToken));
       } catch (error) {
-        console.log("Error refreshig access token");
+        console.log(error);
       }
     }
     if (!accessToken) {
@@ -19,12 +23,7 @@ function PersistLogin() {
     }
   }, [accessToken, refreshToken]);
 
-  return (
-    <>
-      {loading ? <p>Loading...</p> : <Outlet /> }
-    </>
-  )
-
+  return <>{loading ? <Loader /> : <Outlet />}</>;
 }
 
-export default PersistLogin
+export default PersistLogin;
