@@ -22,6 +22,11 @@ module DoorkeeperRegisterable
     {
       id: user.id,
       email: user.email,
+      username: user.username,
+      followers: user.followers.count,
+      following: user.following.count,
+      workouts: user.self_workouts.count,
+      avatar_url: user.avatar_url,
       role: user.role,
       access_token: access_token.token,
       token_type: token_type,

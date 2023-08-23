@@ -1,9 +1,17 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../app/features/counter/counterSlice';
+import sessionReducer from '../app/features/sessions/sessionSlice';
+import exerciseReducer from '../app/features/exercises/exerciseSlice'
+import workoutReducer from '../app/features/workouts/workoutSlice'
+import userReducer from '../app/features/users/userSlice'
+
+
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    session: sessionReducer,
+    exercises: exerciseReducer,
+    workouts: workoutReducer,
+    users: userReducer,
   },
 });
 
@@ -15,3 +23,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
