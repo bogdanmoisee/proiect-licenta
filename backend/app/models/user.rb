@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   validates :email, format: URI::MailTo::EMAIL_REGEXP
   validates :username, length: { minimum: 4 }
-  enum role: %i[user admin]
 
   has_many :workouts
   has_many :active_relationships, class_name: 'Relationship',

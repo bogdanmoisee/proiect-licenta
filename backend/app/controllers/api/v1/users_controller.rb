@@ -17,7 +17,6 @@ module Api
             email: current_user.email,
             username: current_user.username,
             avatar_url: current_user.avatar_url,
-            role: current_user.role,
             created_at: current_user.created_at.iso8601,
             followers: current_user.followers.count,
             following: current_user.following.count,
@@ -38,7 +37,6 @@ module Api
             email: user.email,
             username: user.username,
             avatar_url: user.avatar_url,
-            role: user.role,
             created_at: user.created_at.iso8601,
             followers: user.followers.count,
             following: user.following.count,
@@ -48,7 +46,7 @@ module Api
         end
       end
 
-      # GET /users/:user_id/other_users
+      # GET /users/:user_id/other-users
       def other_users
         current_user = User.find(params[:user_id])
         users = User.without(current_user)

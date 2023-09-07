@@ -15,7 +15,6 @@ export interface User {
   id?: string;
   email?: string;
   username?: string;
-  role?: string;
   createdAt?: string;
   avatar_url?: string;
   followers?: number;
@@ -55,7 +54,6 @@ const initialState: AuthState = {
     id: undefined,
     email: undefined,
     username: undefined,
-    role: undefined,
     createdAt: undefined,
     avatar_url: undefined,
     followers: 0,
@@ -218,7 +216,6 @@ export const sessionSlice = createSlice({
           id: action.payload.id,
           email: action.payload.email,
           username: action.payload.username,
-          role: action.payload.role,
           createdAt: action.payload.created_at,
           followers: action.payload.followers,
           following: action.payload.following,
@@ -249,7 +246,6 @@ export const sessionSlice = createSlice({
           id: action.payload.id,
           email: action.payload.email,
           username: action.payload.username,
-          role: action.payload.role,
           createdAt: action.payload.created_at,
           followers: action.payload.followers,
           following: action.payload.following,
@@ -284,7 +280,6 @@ export const sessionSlice = createSlice({
           email: action.payload.email,
           username: action.payload.username,
           avatar_url: action.payload.avatar_url,
-          role: action.payload.role,
           createdAt: action.payload.created_at,
           followers: action.payload.followers,
           following: action.payload.following,
@@ -316,7 +311,6 @@ export const sessionSlice = createSlice({
           email: action.payload.email,
           username: action.payload.username,
           avatar_url: action.payload.avatar_url,
-          role: action.payload.role,
           createdAt: action.payload.created_at,
           followers: action.payload.followers,
           following: action.payload.following,
@@ -342,7 +336,6 @@ export const sessionSlice = createSlice({
         state.currentUser = {
           id: undefined,
           email: undefined,
-          role: undefined,
           createdAt: undefined,
         };
         state.accessToken = undefined;
